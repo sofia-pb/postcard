@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+
+:root {
+  --border-dark: rgb(76, 76, 76);
+  --border-light: rgb(175, 175, 175);
+  --bg-color-light: rgb(93, 0, 175);
+  --bg-color-dark: rgb(12, 12, 40);
+  --light: rgb(255, 249, 239);
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  width: 50vh;
+  margin: 20px auto;
+  padding: 0.6em;
+  background: linear-gradient(var(--border-light), var(--border-dark));
+  border-radius: 1em;
+  transition: all 0.5s;
+  animation: 6s ease-in-out 0s infinite reverse float;
+}
+
+main:hover {
+  transform: matrix(0.98, 0.1, 0, 0.98, 1, 1);
+  background: linear-gradient(var(--border-dark), var(--border-light));
+  #front {
+    background: linear-gradient(
+      45deg,
+      var(--bg-color-light),
+      var(--bg-color-dark),
+      var(--bg-color-light)
+    );
+    h1,
+    h2 {
+      background-image: linear-gradient(
+        30deg,
+        var(--light),
+        var(--bg-color-light)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .e {
+      filter: drop-shadow(0 0 0 var(--bg-color-light)) brightness(1.2);
+    }
+  }
+}
+
+/* --------------------- front ---------------------- */
+
+.a {
+  grid-area: a;
+  position: absolute;
+  font-size: 2.5em;
+  align-self: self-start;
+  justify-self: flex-start;
+}
+.b {
+  grid-area: b;
+  position: relative;
+  top: 2.5em;
+  font-size: 1.1em;
+  font-weight: 100;
+  align-self: start;
+  justify-self: start;
+}
+.c {
+  grid-area: c;
+  position: absolute;
+  font-size: 2.5em;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+.d {
+  grid-area: d;
+  position: absolute;
+  text-align: center;
+  width: 1em;
+  align-self: flex-end;
+  z-index: 1;
+}
+.e {
+  grid-area: e;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: fit-content;
+
+  img {
+    position: relative;
+    top: em;
+    width: 100%;
+    filter: drop-shadow(0px 0px 80px rgb(255, 0, 255));
+    animation: 3s ease-in-out 0s infinite float;
+  }
+}
+
+#front {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--bg-color-dark),
+    var(--bg-color-light),
+    var(--bg-color-dark)
+  );
+  padding: 1em;
+  margin: auto;
+  border-radius: 0.6em;
+  color: var(--light);
+  grid-template-areas:
+    "a a a "
+    "b b b "
+    "e e e "
+    "d . c ";
+}
+
+@keyframes float {
+  0% {
+    translate: 0 0px;
+  }
+  50% {
+    translate: 0 20px;
+  }
+  100% {
+    translate: 0 0px;
+  }
+}
+
+/* --------------------- back ---------------------- */
+
+.z {
+  grid-area: z;
+  width: 100%;
+  padding: 2em 2em 0 2em;
+  img {
+    width: 100%;
+  }
+}
+
+.x {
+  grid-area: x;
+}
+
+.y {
+  grid-area: y;
+  height: 45vh;
+  padding: 0 0 2em 0;
+  img {
+    height: 100%;
+  }
+}
+
+#back {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background: var(--light);
+  padding: 1em;
+  margin: auto;
+  border-radius: 0.6em;
+  grid-template-areas:
+    "y x"
+    "y x"
+    "hr hr"
+    "z z";
+  hr {
+    width: 80%;
+    justify-self: center;
+  }
+}
+
+#stamp {
+  position: absolute;
+  border: solid rgb(201, 201, 201) 2px;
+  width: 80px;
+  height: 100px;
+  justify-self: flex-end;
+  img {
+    width: 100px;
+    mix-blend-mode: multiply;
+    position: relative;
+  }
+}
+
+.boat {
+  bottom: 100px;
+  right: 10px;
+}
+
+.waves {
+  transform: rotate(-30deg);
+  top: 50px;
+  right: 50px;
+}
+
+/* @media (max-width: 450px) {
+  main {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    padding: 0.6em;
+    background: linear-gradient(var(--border-light), var(--border-dark));
+    border-radius: 1em;
+  }
+}
+ */
