@@ -2,8 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
+    "Outfit", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 :root {
@@ -30,7 +30,12 @@ main {
 
 main:hover {
   transform: matrix(0.98, 0.1, 0, 0.98, 1, 1);
-  background: linear-gradient(var(--border-dark), var(--border-light));
+  background: linear-gradient(
+    45deg,
+    white 2%,
+    var(--border-light),
+    var(--border-dark)
+  );
   #front {
     background: linear-gradient(
       45deg,
@@ -42,7 +47,7 @@ main:hover {
     h2 {
       background-image: linear-gradient(
         30deg,
-        var(--light),
+        var(--light) 60%,
         var(--bg-color-light)
       );
       background-clip: text;
@@ -57,10 +62,15 @@ main:hover {
 
 /* --------------------- front ---------------------- */
 
+h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
 .a {
   grid-area: a;
   position: absolute;
-  font-size: 2.5em;
+
   align-self: self-start;
   justify-self: flex-start;
 }
@@ -68,17 +78,17 @@ main:hover {
   grid-area: b;
   position: relative;
   top: 2.5em;
-  font-size: 1.1em;
-  font-weight: 100;
+  font-size: 1em;
+  font-weight: 400;
   align-self: start;
   justify-self: start;
 }
 .c {
   grid-area: c;
   position: absolute;
-  font-size: 2.5em;
   align-self: flex-end;
   justify-self: flex-end;
+  z-index: 2;
 }
 .d {
   grid-area: d;
